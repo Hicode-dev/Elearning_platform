@@ -1,10 +1,10 @@
 import Image from "next/image"
-import BlogA from '../public/Blog 1.png'
-import BlogB from '../public/Business.png'
-import BlogC from '../public/Design 2.png'
-import BlogD from '../public/Design 3.png'
-import BlogE from '../public/Photography.png'
-import BlogG from '../public/Design 1.png'
+import BlogA from './../../pages/imgs/Blog 1.png'
+import BlogB from './../../pages/imgs/Business.png'
+import BlogC from './../../pages/imgs/Design 2.png'
+import BlogD from './../../pages/imgs/Design 3.png'
+import BlogE from './../../pages/imgs/Photography.png'
+import BlogG from './../../pages/imgs/Development 4.png'
 
 const BlogsCard = () => {
   return (

@@ -1,7 +1,7 @@
 import Navbar from '../components/Navbar'
 import headerImg from './imgs/Background.png'
 import Image from 'next/image'
-import BlogsCard from '@/components/BlogsCard'
+import BlogsCard from '@/components/Blog/BlogsCard'
 
 export default function Blog() {
     return (
