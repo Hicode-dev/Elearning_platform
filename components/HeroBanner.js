@@ -3,7 +3,7 @@ import Image from 'next/image'
 import HeroImage from '../public/image 13.png'
 const HeroBanner = () => {
   return (
-    <div>
+    <div >
         <div className='grid grid-cols-2 place-items-center '>
         <div className='HeroBanner_Text text-black '> 
         <h1 className='text-#020F24 text-[3.5rem] font-bold mb-6'>Unleash Your <span className='text-[#F0A305]'>creativity</span> and Make Your Mark on the <span className='text-[#F0A305]'>World</span></h1>
