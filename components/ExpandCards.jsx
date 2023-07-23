@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import ProductCards from "./ProductCards";
 import UploadImage from "./UploadImage";
-const HomepageCardsA = () => {
+const ExpandCards = () => {
 	const [data, setData] = useState([])
 	useEffect(() => {
 		fetch("http://localhost:1234/AllProducts")
@@ -85,9 +85,8 @@ const HomepageCardsA = () => {
             );
           })}
       </div>
-	  <UploadImage/>
 	  </div>
   );
 };
 
-export default HomepageCardsA;
+export default ExpandCards;
