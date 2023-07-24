@@ -10,7 +10,7 @@ const ProductCards = (props) => {
             href="#"
             className="h-[200px] overflow-hidden"
           >
-            <Image
+            <img
               class="rounded-t-lg min-w-full h-44"
               src={props.image}
               alt="product image"

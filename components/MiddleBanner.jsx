@@ -9,7 +9,7 @@ const MiddleBanner = () => {
   return (
     <div className="my-12">
       <div className="middleBanner_text ">
-        <h1 className="text-[#033484] text-[2rem] font-bold flex justify-center items-center">
+        <h1 className="text-[#033484] text-[2rem] font-bold flex w-full justify-center items-center">
           Expand Your <span className="text-[#F0A305]">Knowledge</span> with Our
           Newly Added Courses
         </h1>
