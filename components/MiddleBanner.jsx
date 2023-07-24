@@ -1,6 +1,10 @@
 import React from "react";
 import HomepageCardsA from "./HomepageCardsA";
 import ExpandCards from "./ExpandCards";
+import SetApart from "./SetApart";
+import EmbrasePage from "./EmbrasePage";
+import UploadImage from "./UploadImage";
+
 const MiddleBanner = () => {
   return (
     <div className="my-12">
@@ -16,7 +20,7 @@ const MiddleBanner = () => {
           <h1 className="text-[#033484] text-[2rem] font-bold  ">
             Popular <span className="text-[#F0A305] mx-2">Courses</span>
           </h1>
-          <div className="bg-blue-100 py-1 px-3 rounded-lg  flex items-center ">
+          <div className="bg-blue-100 py-2 px-3 rounded-lg  flex items-center ">
             <button className="bg-blue-900 rounded-xl pb-2 pt-1  px-3 text-white  ">
               All
             </button>
@@ -32,35 +36,19 @@ const MiddleBanner = () => {
         </div>
 
         <ExpandCards />
-
-        <h1 className="font-bold text-3xl font-poppins text-[#033484] text-center my-3 ">
-          What Sets Us Apart
-        </h1>
-        <p className="font-medium text-center text-gray-500 ">
-          Enjoy a multitude of the following advantages by learning with us
-        </p>
-
-        <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2  gap-6 mt-8 p-2" 
->
-          <div className="bg-white rounded-lg shadow-md  grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2  gap-6 mt-8" >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-            odit iste a id quasi nobis magni nostrum ipsa distinctio! Tempora
-            fugiat dolorem maxime, officiis fuga praesentium pariatur quos
-            accusamus tenetur.
-          </div>
-          <div className="bg-white rounded-lg shadow-md  grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2  gap-6 mt-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-            odit iste a id quasi nobis magni nostrum ipsa distinctio! Tempora
-            fugiat dolorem maxime, officiis fuga praesentium pariatur quos
-            accusamus tenetur.
-          </div>
-          <div className="bg-white rounded-lg shadow-md  grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2  gap-6 mt-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-            odit iste a id quasi nobis magni nostrum ipsa distinctio! Tempora
-            fugiat dolorem maxime, officiis fuga praesentium pariatur quos
-            accusamus tenetur.
-          </div>
+        <div className="py-5 mt-7">
+          <h1 className="font-bold text-3xl font-poppins text-[#033484] text-center my-5 ">
+            What Sets Us Apart
+          </h1>
+          <p className="text-xl text-center text-gray-500 ">
+            Enjoy a multitude of the following advantages by learning with us
+          </p>
         </div>
+       <SetApart/>
+       <EmbrasePage/>
+       <UploadImage/>
+
+
       </div>
     </div>
   );
