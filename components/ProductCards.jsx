@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React from "react"
+import Image from "next/image"
 const ProductCards = (props) => {
   return (
     <div>
@@ -10,7 +10,7 @@ const ProductCards = (props) => {
             href="#"
             className="h-[200px] overflow-hidden"
           >
-            <img
+            <Image
               class="rounded-t-lg min-w-full h-44"
               src={props.image}
               alt="product image"

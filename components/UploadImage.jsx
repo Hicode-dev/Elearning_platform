@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from 'next/image'
 import axios from "axios";
 
 const UploadImage = () => {
@@ -52,7 +53,7 @@ const UploadImage = () => {
           Add Image
         </button>
         {data ? (
-          <img className="w-14 h-14 rounded-3xl" src={data} alt="Uploaded" />
+          <Image className="w-14 h-14 rounded-3xl" src={data} alt="Uploaded" />
         ) : null}
       </div>
     </div>
