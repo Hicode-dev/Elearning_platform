@@ -16,23 +16,24 @@ const MiddleBanner = () => {
         {/* <HomepageCardsA /> */}
 
         <ExpandCards />
-        <div className=" flex items-center justify-between my-6">
-          <h1 className="text-[#033484] text-[2rem] font-bold  ">
+        <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 flex items-center justify-between my-6">
+          <h1 className="text-[#033484] text-[2rem] w-full flex-nowrap font-bold  ">
             Popular <span className="text-[#F0A305] mx-2">Courses</span>
           </h1>
-          <div className="bg-blue-100 py-2 px-3 rounded-lg  flex items-center ">
-            <button className="bg-blue-900 rounded-xl pb-2 pt-1  px-3 text-white  ">
+          <div className="bg-blue-100 py-2 px-3 rounded-lg w-fit flex-nowrap overflow-x-auto lg:w-full  sm:overflow-x-auto flex items-center">
+            <button className="bg-blue-900 rounded-xl pb-2 pt-1 px-3 text-white">
               All
             </button>
-            <ul className="flex items-center ">
+            <ul className="flex items-center">
               <li className="px-3 text-gray-500 font-semibold">Design</li>
               <li className="px-3 text-gray-500 font-semibold">Development</li>
               <li className="px-3 text-gray-500 font-semibold">Business</li>
               <li className="px-3 text-gray-500 font-semibold">Marketing</li>
-              <li className="px-3 text-gray-500 font-semibold">Data Science</li>
+              <li className="px-3 whitespace-nowrap text-gray-500 font-semibold">DataScience</li>
               <li className="px-3 text-gray-500 font-semibold">Design</li>
             </ul>
           </div>
+
         </div>
 
         <ExpandCards />
@@ -44,9 +45,9 @@ const MiddleBanner = () => {
             Enjoy a multitude of the following advantages by learning with us
           </p>
         </div>
-       <SetApart/>
-       <EmbrasePage/>
-       <UploadImage/>
+        <SetApart />
+        <EmbrasePage />
+        <UploadImage />
 
 
       </div>
