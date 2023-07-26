@@ -262,7 +262,7 @@ const EmbrasePage = () => {
             </div>
   
           </div>
-          <h1 className="lg:text-4xl lg:mt-12 lg:-ml-16  md:text-2xl sm:text-2xl text-blue-900 font-extrabold w-full">Meet Our Instructor</h1>
+          <h1 className="lg:text-4xl lg:mt-12 lg:-ml-2  md:text-2xl sm:text-2xl text-blue-900 font-extrabold w-full">Meet Our Instructor</h1>
         </div>
       </div>
     </>

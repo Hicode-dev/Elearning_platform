@@ -6,7 +6,6 @@ import MiddleBanner from "@/components/MiddleBanner";
 import EmbrasePage from "@/components/EmbrasePage";
 import ExpandCards from "@/components/ExpandCards";
 import Testimonials from "@/components/Testimonials";
-import UploadImage from "@/components/UploadImage";
 import SetApart from "@/components/SetApart";
 import BecomeAnInstructor from "@/components/BecomeAnInstructor";
 import Patners from "@/components/Patners";
@@ -27,7 +26,6 @@ export default function Home() {
         {/* There is a missen component here this expand card is just used to fil this space */}
         <ExpandCards />
         <Testimonials />
-        <UploadImage />
         <BecomeAnInstructor />
         <Patners />
         <OurPatners />
