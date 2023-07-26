@@ -1,99 +1,63 @@
 import React from "react";
 import Image from "next/image";
 import Smile from "../public/Smile.png";
+import useFetch from "./Fetch";
 
 const EmbrasePage = () => {
+  const { data, error } = useFetch("http://localhost:1234/setapart");
+  // Ensure 'data' is an array before setting it in the state
+  // if (Array.isArray(data)) {
+  //   setData(data);
+  // } else if (error) {
+  //   console.error("API response is not an array:", data);
+  // }
   return (
     <>
-      <div className="flex lg:grid-cols-2 md:cols-1   justify-evenly ">
-        <div className="d-grid">
-          <div className="w-64  shadow-xl  border-8 border-l-0 border-t-0 border-r-blue-400  border-b-blue-400 p-3 m-8 rounded-xl divide-y-8 ">
-            <div className="bg-[#D39264] rounded-md w-fit mx-auto  text-light p-2 text-center ">
+      <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="grid lg:grid-cols-1  md:grid-cols-1 w-fit sm:grid-cols-1">
+          <div className="   shadow-xl  relative  border-8 border-l-0 border-t-0 border-r-blue-400  border-b-blue-400 p-3 m-6 rounded-xl divide-y-8 ">
+            <div className="bg-[#D39264] absolute -left-10 rounded-md w-fit mx-auto  text-light p-2 text-center ">
               <p className="text-xs font-semibold text-center text-white">
                 {" "}
                 Our Active Students
               </p>
               <div className="flex items-center mx-auto text-center">
-                <Image
-                  className="w-7 h-7  rounded-xl border border-black "
-                  src={Smile}
-                  alt=""
-                />
-                <Image
-                  className="w-7 h-7 rounded-xl -ml-1 border border-black "
-                  src={Smile}
-                  alt=""
-                />
-                <Image
-                  className="w-7 h-7 rounded-xl -ml-1 border border-black "
-                  src={Smile}
-                  alt=""
-                />
-                <Image
-                  className="w-7 h-7 rounded-xl -ml-1 border border-black "
-                  src={Smile}
-                  alt=""
-                />
-                <Image
-                  className="w-7 h-7 rounded-xl -ml-1 border border-black "
-                  src={Smile}
-                  alt=""
-                />
-                <p className="bg-blue-500 -ml-1 rounded-3xl text-gray-200 text-xs font-bold  py-2 px-0.5  ">10k+</p>
+                {data &&
+                  data.map((el, i) => {
+                    return (
+                      <div key={i}>
+                        <img
+                          className="w-7 h-7  rounded-xl border  "
+                          src={el.students}
+                          alt=""
+                        />
+                      </div>
+                    );
+                  })}
+
+                <p className="bg-blue-500 -ml-1 rounded-3xl text-gray-200 text-xs font-bold  py-2 px-0.5  ">
+                  10k+
+                </p>
               </div>
             </div>
-            <Image className="w-48 h-48  ml-8 mt-4s" src={Smile} alt="" />
+            <Image className="w-full h-48" src={Smile} alt="" />
           </div>
-          <div className="w-74  shadow-xl  border-8 border-r-0 border-b-0 border-t-yellow-400  border-l-yellow-400 p-3 m-8 rounded-xl divide-y-8 ">
-            <div className="bg-[#D39264] rounded-md w-fit mx-auto  text-light p-2 text-center ">
-              <p className="text-xs font-semibold text-center text-white">
-                {" "}
-                Our Active Students
-              </p>
-              <div className="flex items-center mx-auto text-center">
-                <Image
-                  className="w-7 h-7 rounded-xl border border-black "
-                  src={Smile}
-                  alt=""
-                />
-                <Image
-                  className="w-7 h-7 rounded-xl -ml-1 border border-black "
-                  src={Smile}
-                  alt=""
-                />
-                <Image
-                  className="w-7 h-7 rounded-xl -ml-1 border border-black "
-                  src={Smile}
-                  alt=""
-                />
-                <Image
-                  className="w-7 h-7 rounded-xl -ml-1 border border-black "
-                  src={Smile}
-                  alt=""
-                />
-                <Image
-                  className="w-7 h-7  rounded-xl border border-black "
-                  src={Smile}
-                  alt=""
-                />
-                <p className="bg-blue-500 -ml-1 rounded-3xl text-gray-200 text-xs font-bold  py-2 px-0.5  ">10k+</p>
-              </div>
-            </div>
-            <Image className="w-48 h-48  ml-8 mt-4s" src={Smile} alt="" />
+          <div className="  shadow-xl  border-8 border-r-0 border-b-0 border-t-yellow-400  border-l-yellow-400 p-3 m-6 rounded-xl divide-y-8 ">
+            <Image className="w-full h-48" src={Smile} alt="" />
           </div>
         </div>
 
-        <div className="d-grid mt-24">
-          <h1 className="text-3xl width: 75%; tracking-wide  text-start font-bold font-poppins">
+        <div className="d-grid lg:mt-36 lg:-ml-36">
+          <h1 className="lg:text-3xl md:text-2xl sm:text-xl width: 75%; tracking-wide  text-start font-bold font-poppins">
             Embrace <span className="text-yellow-600">Limitless </span> Learning
             Opportunities, <br />
             Accessible Anytime and{" "}
             <span className="text-yellow-600">Anywhere.</span>
           </h1>
-          <p className="text-gray-600 font-medium mx-auto text-md text-start  text-md ">
+          <p className="text-gray-600 font-medium mx-auto text-md text-start  lg:text-md sm:text-xm ">
             Elevate your skills through our exceptional platform, featuring
-            world-class courses, <br /> certificates, and a vast repository of online
-            knowledge
+            world-class courses, <br /> certificates, and a vast repository of
+            online knowledge
           </p>
           <div className="grid lg:grid-cols-3 md:grid-cols-3 grid-cols-2  gap-6 mt-8 ">
             <div className="flex items-center shadow ">
@@ -138,25 +102,21 @@ const EmbrasePage = () => {
               <div className="bg-blue-200 p-3 rounded-xl ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="24"
+                  width="25"
                   height="24"
-                  viewBox="0 0 24 24"
+                  viewBox="0 0 25 24"
                   fill="none"
                 >
-                  <g clip-path="url(#clip0_1163_20936)">
+                  <g clip-path="url(#clip0_1206_7468)">
                     <path
-                      d="M2.57146 10.2856H4.28575C4.51308 10.2856 4.7311 10.376 4.89184 10.5367C5.05259 10.6974 5.14289 10.9155 5.14289 11.1428V15.4285C5.14289 15.6558 5.05259 15.8738 4.89184 16.0346C4.7311 16.1953 4.51308 16.2856 4.28575 16.2856H2.57146C2.11681 16.2856 1.68077 16.105 1.35928 15.7835C1.03779 15.4621 0.857178 15.026 0.857178 14.5714V11.9999C0.857178 11.5453 1.03779 11.1092 1.35928 10.7877C1.68077 10.4663 2.11681 10.2856 2.57146 10.2856ZM21.4286 16.2856H19.7143C19.487 16.2856 19.269 16.1953 19.1082 16.0346C18.9475 15.8738 18.8572 15.6558 18.8572 15.4285V11.1428C18.8572 10.9155 18.9475 10.6974 19.1082 10.5367C19.269 10.376 19.487 10.2856 19.7143 10.2856H21.4286C21.8833 10.2856 22.3193 10.4663 22.6408 10.7877C22.9623 11.1092 23.1429 11.5453 23.1429 11.9999V14.5714C23.1429 15.026 22.9623 15.4621 22.6408 15.7835C22.3193 16.105 21.8833 16.2856 21.4286 16.2856ZM16.2857 20.9999C17.1951 20.9999 18.0671 20.6387 18.7101 19.9957C19.3531 19.3527 19.7143 18.4807 19.7143 17.5714V16.2856"
-                      fill="#BD5C17"
-                    />
-                    <path
-                      d="M19.7143 16.2856H21.4286C21.8833 16.2856 22.3193 16.105 22.6408 15.7835C22.9623 15.4621 23.1429 15.026 23.1429 14.5714V11.9999C23.1429 11.5453 22.9623 11.1092 22.6408 10.7877C22.3193 10.4663 21.8833 10.2856 21.4286 10.2856H19.7143C19.487 10.2856 19.269 10.376 19.1082 10.5367C18.9475 10.6974 18.8572 10.9155 18.8572 11.1428V15.4285C18.8572 15.6558 18.9475 15.8738 19.1082 16.0346C19.269 16.1953 19.487 16.2856 19.7143 16.2856ZM19.7143 16.2856V17.5714C19.7143 18.4807 19.3531 19.3527 18.7101 19.9957C18.0671 20.6387 17.1951 20.9999 16.2857 20.9999M2.57146 10.2856H4.28575C4.51308 10.2856 4.7311 10.376 4.89184 10.5367C5.05259 10.6974 5.14289 10.9155 5.14289 11.1428V15.4285C5.14289 15.6558 5.05259 15.8738 4.89184 16.0346C4.7311 16.1953 4.51308 16.2856 4.28575 16.2856H2.57146C2.11681 16.2856 1.68077 16.105 1.35928 15.7835C1.03779 15.4621 0.857178 15.026 0.857178 14.5714V11.9999C0.857178 11.5453 1.03779 11.1092 1.35928 10.7877C1.68077 10.4663 2.11681 10.2856 2.57146 10.2856Z"
+                      d="M21.9286 0.857178H3.07146C2.12469 0.857178 1.35718 1.62469 1.35718 2.57146V21.4286C1.35718 22.3754 2.12469 23.1429 3.07146 23.1429H21.9286C22.8754 23.1429 23.6429 22.3754 23.6429 21.4286V2.57146C23.6429 1.62469 22.8754 0.857178 21.9286 0.857178Z"
                       stroke="#BD5C17"
                       stroke-width="1.5"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     />
                     <path
-                      d="M4.28577 10.2857V8.57146C4.28577 6.52551 5.09852 4.56335 6.54523 3.11664C7.99194 1.66993 9.9541 0.857178 12.0001 0.857178C14.046 0.857178 16.0082 1.66993 17.4549 3.11664C18.9016 4.56335 19.7143 6.52551 19.7143 8.57146V10.2857M9.42862 6.85718V9.42861M14.5715 6.85718V9.42861M9.42862 12.8572C9.42862 15.1372 14.5715 15.1372 14.5715 12.8572M14.1429 18.8572C14.7112 18.8572 15.2563 19.0829 15.6581 19.4848C16.06 19.8867 16.2858 20.4317 16.2858 21C16.2858 21.5684 16.06 22.1134 15.6581 22.5153C15.2563 22.9171 14.7112 23.1429 14.1429 23.1429H11.5715C11.0032 23.1429 10.4581 22.9171 10.0563 22.5153C9.65439 22.1134 9.42862 21.5684 9.42862 21C9.42862 20.4317 9.65439 19.8867 10.0563 19.4848C10.4581 19.0829 11.0032 18.8572 11.5715 18.8572H14.1429Z"
+                      d="M1.35718 6.85718H23.6429M7.35718 6.85718L9.92861 0.857178M15.0715 6.85718L17.6429 0.857178M9.91146 18.1029V11.5372C9.91625 11.4363 9.94574 11.3381 9.99733 11.2513C10.0489 11.1644 10.121 11.0916 10.2074 11.0391C10.2937 10.9866 10.3916 10.9561 10.4924 10.9503C10.5932 10.9445 10.694 10.9635 10.7857 11.0057L16.4772 14.28C16.5693 14.3368 16.6454 14.4163 16.6982 14.5108C16.751 14.6053 16.7787 14.7118 16.7787 14.82C16.7787 14.9283 16.751 15.0348 16.6982 15.1293C16.6454 15.2238 16.5693 15.3032 16.4772 15.36L10.7857 18.6515C10.6924 18.6898 10.5912 18.7054 10.4906 18.6968C10.3901 18.6882 10.293 18.6557 10.2075 18.6021C10.122 18.5484 10.0505 18.4752 9.99903 18.3883C9.94755 18.3015 9.91752 18.2037 9.91146 18.1029Z"
                       stroke="#BD5C17"
                       stroke-width="1.5"
                       stroke-linecap="round"
@@ -164,13 +124,18 @@ const EmbrasePage = () => {
                     />
                   </g>
                   <defs>
-                    <clipPath id="clip0_1163_20936">
-                      <rect width="24" height="24" fill="white" />
+                    <clipPath id="clip0_1206_7468">
+                      <rect
+                        width="24"
+                        height="24"
+                        fill="white"
+                        transform="translate(0.5)"
+                      />
                     </clipPath>
                   </defs>
                 </svg>
               </div>
-              <h5 className="text-sm font-bold  mx-3">Expert Instructors</h5>
+              <h5 className="text-sm font-bold  mx-3">2000+ Courses</h5>
             </div>
             <div className="flex items-center shadow ">
               <div className="bg-blue-200 p-3 rounded-xl ">
@@ -181,31 +146,16 @@ const EmbrasePage = () => {
                   viewBox="0 0 24 24"
                   fill="none"
                 >
-                  <g clip-path="url(#clip0_1163_20936)">
-                    <path
-                      d="M2.57146 10.2856H4.28575C4.51308 10.2856 4.7311 10.376 4.89184 10.5367C5.05259 10.6974 5.14289 10.9155 5.14289 11.1428V15.4285C5.14289 15.6558 5.05259 15.8738 4.89184 16.0346C4.7311 16.1953 4.51308 16.2856 4.28575 16.2856H2.57146C2.11681 16.2856 1.68077 16.105 1.35928 15.7835C1.03779 15.4621 0.857178 15.026 0.857178 14.5714V11.9999C0.857178 11.5453 1.03779 11.1092 1.35928 10.7877C1.68077 10.4663 2.11681 10.2856 2.57146 10.2856ZM21.4286 16.2856H19.7143C19.487 16.2856 19.269 16.1953 19.1082 16.0346C18.9475 15.8738 18.8572 15.6558 18.8572 15.4285V11.1428C18.8572 10.9155 18.9475 10.6974 19.1082 10.5367C19.269 10.376 19.487 10.2856 19.7143 10.2856H21.4286C21.8833 10.2856 22.3193 10.4663 22.6408 10.7877C22.9623 11.1092 23.1429 11.5453 23.1429 11.9999V14.5714C23.1429 15.026 22.9623 15.4621 22.6408 15.7835C22.3193 16.105 21.8833 16.2856 21.4286 16.2856ZM16.2857 20.9999C17.1951 20.9999 18.0671 20.6387 18.7101 19.9957C19.3531 19.3527 19.7143 18.4807 19.7143 17.5714V16.2856"
-                      fill="#BD5C17"
-                    />
-                    <path
-                      d="M19.7143 16.2856H21.4286C21.8833 16.2856 22.3193 16.105 22.6408 15.7835C22.9623 15.4621 23.1429 15.026 23.1429 14.5714V11.9999C23.1429 11.5453 22.9623 11.1092 22.6408 10.7877C22.3193 10.4663 21.8833 10.2856 21.4286 10.2856H19.7143C19.487 10.2856 19.269 10.376 19.1082 10.5367C18.9475 10.6974 18.8572 10.9155 18.8572 11.1428V15.4285C18.8572 15.6558 18.9475 15.8738 19.1082 16.0346C19.269 16.1953 19.487 16.2856 19.7143 16.2856ZM19.7143 16.2856V17.5714C19.7143 18.4807 19.3531 19.3527 18.7101 19.9957C18.0671 20.6387 17.1951 20.9999 16.2857 20.9999M2.57146 10.2856H4.28575C4.51308 10.2856 4.7311 10.376 4.89184 10.5367C5.05259 10.6974 5.14289 10.9155 5.14289 11.1428V15.4285C5.14289 15.6558 5.05259 15.8738 4.89184 16.0346C4.7311 16.1953 4.51308 16.2856 4.28575 16.2856H2.57146C2.11681 16.2856 1.68077 16.105 1.35928 15.7835C1.03779 15.4621 0.857178 15.026 0.857178 14.5714V11.9999C0.857178 11.5453 1.03779 11.1092 1.35928 10.7877C1.68077 10.4663 2.11681 10.2856 2.57146 10.2856Z"
-                      stroke="#BD5C17"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M4.28577 10.2857V8.57146C4.28577 6.52551 5.09852 4.56335 6.54523 3.11664C7.99194 1.66993 9.9541 0.857178 12.0001 0.857178C14.046 0.857178 16.0082 1.66993 17.4549 3.11664C18.9016 4.56335 19.7143 6.52551 19.7143 8.57146V10.2857M9.42862 6.85718V9.42861M14.5715 6.85718V9.42861M9.42862 12.8572C9.42862 15.1372 14.5715 15.1372 14.5715 12.8572M14.1429 18.8572C14.7112 18.8572 15.2563 19.0829 15.6581 19.4848C16.06 19.8867 16.2858 20.4317 16.2858 21C16.2858 21.5684 16.06 22.1134 15.6581 22.5153C15.2563 22.9171 14.7112 23.1429 14.1429 23.1429H11.5715C11.0032 23.1429 10.4581 22.9171 10.0563 22.5153C9.65439 22.1134 9.42862 21.5684 9.42862 21C9.42862 20.4317 9.65439 19.8867 10.0563 19.4848C10.4581 19.0829 11.0032 18.8572 11.5715 18.8572H14.1429Z"
-                      stroke="#BD5C17"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_1163_20936">
-                      <rect width="24" height="24" fill="white" />
-                    </clipPath>
-                  </defs>
+                  <path
+                    d="M17.2577 16.45L17.2656 16.4455V16.4363V13.3254L18.7344 12.5095V17.3044L12 21.0925L5.26562 17.3044V12.5095L6.73438 13.3254V16.4363V16.4455L6.74234 16.45L11.9923 19.4031L12 19.4074L12.0077 19.4031L17.2577 16.45Z"
+                    fill="#BD5C17"
+                    stroke="#BD5C17"
+                    stroke-width="0.03125"
+                  />
+                  <path
+                    d="M12 2.15527L1.5 7.59971V8.89974L12 14.7329L21 9.73309V13.8751H22.5V7.59971L12 2.15527ZM19.5 8.85048L18 9.68377L12 13.0173L6 9.68377L4.5 8.85048L3.46036 8.27288L12 3.84493L20.5396 8.27288L19.5 8.85048Z"
+                    fill="#BD5C17"
+                  />
                 </svg>
               </div>
               <h5 className="text-sm font-bold  mx-3">Expert Instructors</h5>
@@ -326,7 +276,6 @@ const EmbrasePage = () => {
             </div>
           </div>
         </div>
-
       </div>
     </>
   );

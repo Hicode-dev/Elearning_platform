@@ -3,8 +3,8 @@ import React from "react"
 const SetApart = ()=>{
     return (
         <>
-           <div class="row flex items-start">
-          <div className="bg-white rounded-lg shadow-md grid lg-cols-4 mdcols-3 cols-2 w-2/6  gap-6 mt-8 p-2 ">
+           <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4">
+          <div className="bg-white rounded-lg shadow-md  p-2 ">
             <div className="flex">
               <div className="bg-yellow-500 text-white py-2 h-10  px-2 rounded-lg mt-1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -18,7 +18,7 @@ const SetApart = ()=>{
             </div>
 
           </div>
-          <div className="bg-white rounded-lg shadow-md grid lg-cols-4 mx-5 mdcols-3 cols-2 w-2/6  gap-6 mt-8 p-2 ">
+          <div className="bg-white rounded-lg shadow-md p-2 ">
             <div className="flex">
               <div className="bg-yellow-600 text-white py-2 h-10  px-2 rounded-lg mt-1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -40,7 +40,7 @@ const SetApart = ()=>{
             </div>
 
           </div>
-          <div className="bg-white rounded-lg shadow-md grid lg-cols-4 mdcols-3 cols-2 w-2/6  gap-6 mt-8 p-2 ">
+          <div className="bg-white rounded-lg shadow-md p-2 ">
             <div className="flex">
               <div className="bg-blue-400 text-white py-2 h-10  px-2 rounded-lg mt-1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

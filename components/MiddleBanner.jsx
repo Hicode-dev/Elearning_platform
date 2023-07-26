@@ -9,18 +9,19 @@ const MiddleBanner = () => {
   return (
     <div className="my-12">
       <div className="middleBanner_text ">
-        <h1 className="text-[#033484] text-[2rem] font-bold flex w-full justify-center items-center">
+        <h1 className="text-[#033484] lg:text-4xl md:text-3xl sm:text-3xl font-bold  w-full justify-center items-center">
           Expand Your <span className="text-[#F0A305]">Knowledge</span> with Our
           Newly Added Courses
         </h1>
         {/* <HomepageCardsA /> */}
-
         <ExpandCards />
-        <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 flex items-center justify-between my-6">
-          <h1 className="text-[#033484] text-[2rem] w-full flex-nowrap font-bold  ">
+
+        {/* Flex column on small screens */}
+        <div className="grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1  gap-6 my-8">
+          <h1 className="text-[#033484] text-[2rem] w-full flex-nowrap font-bold">
             Popular <span className="text-[#F0A305] mx-2">Courses</span>
           </h1>
-          <div className="bg-blue-100 py-2 px-3 rounded-lg w-fit flex-nowrap overflow-x-auto lg:w-full  sm:overflow-x-auto flex items-center">
+          <div className="bg-blue-100 categ  py-2 px-3 rounded-lg max-w-xl overflow-x-auto flex-nowrap lg:w-fit flex items-center">
             <button className="bg-blue-900 rounded-xl pb-2 pt-1 px-3 text-white">
               All
             </button>
@@ -33,23 +34,20 @@ const MiddleBanner = () => {
               <li className="px-3 text-gray-500 font-semibold">Design</li>
             </ul>
           </div>
-
         </div>
 
         <ExpandCards />
         <div className="py-5 mt-7">
-          <h1 className="font-bold text-3xl font-poppins text-[#033484] text-center my-5 ">
+          <h1 className="font-bold text-3xl font-poppins text-[#033484] text-center my-5">
             What Sets Us Apart
           </h1>
-          <p className="text-xl text-center text-gray-500 ">
+          <p className="text-xl text-center text-gray-500">
             Enjoy a multitude of the following advantages by learning with us
           </p>
         </div>
         <SetApart />
         <EmbrasePage />
         <UploadImage />
-
-
       </div>
     </div>
   );

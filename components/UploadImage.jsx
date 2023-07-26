@@ -53,7 +53,7 @@ const UploadImage = () => {
           Add Image
         </button>
         {data ? (
-          <imgmg className="w-14 h-14 rounded-3xl" src={data} alt="Uploaded" />
+          <img className="w-14 h-14 rounded-3xl" src={data} alt="Uploaded" />
         ) : null}
       </div>
     </div>

@@ -21,7 +21,7 @@ const ExpandCards = () => {
 	
   return (
     <div className="max-w-100% mx-auto">
-      <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2  gap-6 mt-8">
+      <div class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1  gap-6 mt-8">
         {data &&
           data.map((el, i) => {
             return (
