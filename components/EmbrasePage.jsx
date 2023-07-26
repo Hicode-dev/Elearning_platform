@@ -158,7 +158,7 @@ const EmbrasePage = () => {
                   />
                 </svg>
               </div>
-              <h5 className="text-sm font-bold  mx-3">Expert Instructors</h5>
+              <h5 className="text-sm font-bold  mx-3">Educational Content</h5>
             </div>
             <div className="flex items-center shadow lg:col-4 md:col-3 col-2 ">
               <div className="bg-blue-200 p-3 rounded-xl ">
