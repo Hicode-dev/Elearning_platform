@@ -2,6 +2,7 @@ import React from "react"
 import Image from "next/image"
 const ProductCards = (props) => {
   return (
+    // I passed the card as props to homepageCards
     <div>
          <div>
        <div class="max-w-2xl mx-auto">

@@ -1,9 +1,10 @@
 import React from "react";
 import HomepageCardsA from "./HomepageCardsA";
 import ExpandCards from "./ExpandCards";
-import SetApart from "./SetApart";
-import EmbrasePage from "./EmbrasePage";
-import UploadImage from "./UploadImage";
+// import SetApart from "./SetApart";
+// import EmbrasePage from "./EmbrasePage";
+// import UploadImage from "./UploadImage";
+// import Testimonials from "./Testimonials";
 
 const MiddleBanner = () => {
   return (
@@ -45,9 +46,7 @@ const MiddleBanner = () => {
             Enjoy a multitude of the following advantages by learning with us
           </p>
         </div>
-        <SetApart />
-        <EmbrasePage />
-        <UploadImage />
+        
       </div>
     </div>
   );

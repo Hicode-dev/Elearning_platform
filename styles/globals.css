@@ -5,3 +5,7 @@
 .categ::-webkit-scrollbar {
     display: none;
 }
+.teacher{
+    position: absolute;
+    right: -30%;
+}
