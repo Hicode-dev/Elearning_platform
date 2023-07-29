@@ -1,25 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import ProductCards from "./ProductCards";
 import UploadImage from "./UploadImage";
-import { data } from "autoprefixer";
-import useFetch from "./Fetch";
-const HomepageCardsA = () => {
-  const { data, error } = useFetch("http://localhost:1234/AllProducts");
-  // Ensure 'data' is an array before setting it in the state
-  if (Array.isArray(data)) {
-    setData(data);
-  } else if (error) {
-    console.error("API response is not an array:", data);
-  }
-
+const ExpandCards = () => {
+	const [data, setData] = useState([])
+	useEffect(() => {
+		fetch("http://localhost:1234/AllProducts")
+		  .then((response) => response.json())
+		  .then((data) => {
+			// Ensure 'data' is an array before setting it in the state
+			if (Array.isArray(data)) {
+			  setData(data);
+			} else {
+			  console.error("API response is not an array:", data);
+			}
+		  })
+		  .catch((error) => {
+			console.error("Error fetching data:", error);
+		  });
+	  }, []);
+	
   return (
     <div className="max-w-100% mx-auto">
-      <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2  gap-6 mt-8">
+      <div class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1  gap-6 mt-8">
         {data &&
           data.map((el, i) => {
             return (
               <div key={i}>
-                {/* mapping all the items in the array  using product cards as container*/}
+                {/* mapping all the items in the array */}
                 <ProductCards
                   image={el.ProductImage}
                   text={el.ProductTitle}
@@ -78,11 +85,8 @@ const HomepageCardsA = () => {
             );
           })}
       </div>
-
-      {/* i rendere this for uploading images to json-server */}
-      <UploadImage />
-    </div>
+	  </div>
   );
 };
 
-export default HomepageCardsA;
+export default ExpandCards;
