@@ -1,6 +1,6 @@
 import React from "react";
-import Smile from "../public/Smile.png";
-import photography from "../public/photography.png";
+// import Smile from "../public/Smile.png";
+// import photography from "../public/photography.png";
 import useFetch from "./Fetch";
 
 const Testimonials = () => {

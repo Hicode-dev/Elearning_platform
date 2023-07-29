@@ -2,6 +2,7 @@ import Navbar from '../components/Navbar'
 import headerImg from './imgs/Background.png'
 import Image from 'next/image'
 import BlogsCard from '@/components/Blog/BlogsCard'
+import Footer from '@/components/Footer'
 
 export default function Blog() {
     return (
@@ -16,8 +17,11 @@ export default function Blog() {
             />
         </div>
         <BlogsCard />
+
+      
      
       </div>
+      <Footer />
       </main>
     )
   }

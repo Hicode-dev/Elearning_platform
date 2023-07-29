@@ -8,7 +8,7 @@ import BlogG from './../../pages/imgs/Development 4.png'
 
 const BlogsCard = () => {
   return (
-    <div>
+    <div className="my-9">
       <div className="flex justify-between">
         <div>
           <h3 className="text-xl font-bold">
